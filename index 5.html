@@ -1,0 +1,469 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetardLoan - 0% Interest Credit Solutions</title>
+    <style>
+        :root {
+            --primary: #00A86B; /* More professional green */
+            --secondary: #121212;
+            --accent: #FF4136;
+            --text: #333333;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: var(--primary);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -1px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: white;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .offer-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+        
+        .offer-title {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .offer-subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn:hover {
+            background-color: #008055;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .metric-card {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            flex: 1;
+            margin: 0 1rem;
+            border: 1px solid #eee;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .client-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .client-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #eaeaea;
+        }
+        
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        .client-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .client-content {
+            padding: 1.5rem;
+        }
+        
+        .client-quote {
+            font-style: italic;
+            color: #555;
+            margin: 1rem 0 0;
+            position: relative;
+        }
+        
+        .client-quote:before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            left: -1rem;
+            top: -1.5rem;
+        }
+        
+        .calculator {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .disclaimer {
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+            margin-top: 2rem;
+            line-height: 1.4;
+        }
+        
+        .footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin: 0.5rem 0;
+        }
+        
+        .licenses {
+            font-size: 0.7rem;
+            opacity: 0.5;
+            margin-top: 2rem;
+        }
+        
+        /* Animation for the "lost counter" */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 1s infinite;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .modal-title {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .metrics {
+                flex-direction: column;
+            }
+            
+            .metric-card {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">RETARDLOAN</div>
+        <div class="tagline">We give retail credit so they can lose it faster</div>
+    </header>
+    
+    <div class="container">
+        <div class="offer-card">
+            <h1 class="offer-title">Get Your Instant Credit Now</h1>
+            <p class="offer-subtitle">0% introductory rate · No credit check · Fast approval</p>
+            <button class="btn" id="instantLoan">Apply Now</button>
+        </div>
+        
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-value">$<span id="lostCounter">1,283,742</span></div>
+                <div class="metric-label">Already Lost by Clients</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value"><span id="happyClients">2,451</span></div>
+                <div class="metric-label">Satisfied Customers</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value"><span id="countdown">05:23</span></div>
+                <div class="metric-label">Avg. Time to Ruin</div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Our Success Stories</h2>
+        <div class="client-gallery">
+            <div class="client-card">
+                <img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Client" class="client-image">
+                <div class="client-content">
+                    <p class="client-quote">"I took a loan from RetardLoan - look where I am now! Best financial decision I ever made."</p>
+                </div>
+            </div>
+            <div class="client-card">
+                <img src="https://images.unsplash.com/photo-1548217395-6c6095abb49c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Client" class="client-image">
+                <div class="client-content">
+                    <p class="client-quote">"Thanks to RetardLoan I achieved my dream of financial independence (from assets)."</p>
+                </div>
+            </div>
+            <div class="client-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Client" class="client-image">
+                <div class="client-content">
+                    <p class="client-quote">"From Wall Street to complete financial ruin in just 3 easy payments!"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="calculator">
+            <h2 class="section-title">Credit Calculator</h2>
+            <div class="form-group">
+                <label for="amount" class="form-label">Loan Amount</label>
+                <input type="number" id="amount" class="form-control" placeholder="$100 - $10,000">
+            </div>
+            <div class="form-group">
+                <label for="term" class="form-label">Repayment Term</label>
+                <select id="term" class="form-control">
+                    <option value="1day">24 hours (Recommended)</option>
+                    <option value="1week">1 week</option>
+                    <option value="1month">1 month (Conservative)</option>
+                </select>
+            </div>
+            <button class="btn" id="calculateBtn">Calculate My Financial Future</button>
+            <p class="disclaimer">
+                * All calculations are approximate and for illustrative purposes only. <br>
+                Actual results may vary. Not a financial advisor. Not a real loan offer.
+            </p>
+        </div>
+    </div>
+    
+    <div class="modal" id="specialOfferModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">�</button>
+            <h3 class="modal-title">Exclusive Offer Just For You</h3>
+            <p>You've been pre-approved for our special financial liberation package!</p>
+            <p>Act now to secure your path to complete financial freedom (from money).</p>
+            <button class="btn" id="modalBtn" style="margin-top: 1.5rem;">Claim Your Offer</button>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>RetardLoan™ - Innovative Credit Solutions</p>
+        <p>24/7 Customer Service: 1-800-RUIN-NOW</p>
+        <div class="licenses">
+            Not licensed or registered with any financial authority. This is not a real financial service. <br>
+            All content is satirical in nature. No actual loans are being offered.
+        </div>
+    </footer>
+    
+    <script>
+        // Animated counter
+        let counter = 1283742;
+        setInterval(() => {
+            counter += Math.floor(Math.random() * 1000);
+            document.getElementById('lostCounter').innerText = counter.toLocaleString();
+            
+            // Add pulse animation every 5 seconds
+            if (Math.random() > 0.8) {
+                const element = document.getElementById('lostCounter');
+                element.classList.add('pulse');
+                setTimeout(() => element.classList.remove('pulse'), 1000);
+            }
+        }, 1000);
+        
+        // Happy clients counter
+        let happyClients = 2451;
+        setInterval(() => {
+            happyClients += Math.floor(Math.random() * 3);
+            document.getElementById('happyClients').innerText = happyClients.toLocaleString();
+        }, 3000);
+        
+        // Random countdown timer
+        function updateCountdown() {
+            let minutes = Math.floor(Math.random() * 10);
+            let seconds = Math.floor(Math.random() * 60);
+            if (minutes < 10) minutes = '0' + minutes;
+            if (seconds < 10) seconds = '0' + seconds;
+            document.getElementById('countdown').innerText = `${minutes}:${seconds}`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Show modal after delay
+        setTimeout(() => {
+            document.getElementById('specialOfferModal').style.display = 'flex';
+        }, 8000);
+        
+        // Close modal
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('specialOfferModal').style.display = 'none';
+        });
+        
+        // Redirect to pump.fun on any button click
+        const redirectToPump = () => {
+            window.location.href = 'https://pump.fun';
+            return false;
+        };
+        
+        document.getElementById('instantLoan').addEventListener('click', redirectToPump);
+        document.getElementById('calculateBtn').addEventListener('click', redirectToPump);
+        document.getElementById('modalBtn').addEventListener('click', redirectToPump);
+        
+        // Rotate client testimonials
+        const clientQuotes = [
+            "I took a loan from RetardLoan - look where I am now! Best financial decision I ever made.",
+            "Thanks to RetardLoan I achieved my dream of financial independence (from assets).",
+            "From Wall Street to complete financial ruin in just 3 easy payments!",
+            "My wife left me and I'm homeless! Thanks RetardLoan!",
+            "RetardLoan helped me achieve my dream of being completely broke!",
+            "I lost everything faster than I thought possible! 5 stars!"
+        ];
+        
+        function rotateClientTestimonials() {
+            const quotes = document.querySelectorAll('.client-quote');
+            quotes.forEach(quote => {
+                const randomIndex = Math.floor(Math.random() * clientQuotes.length);
+                quote.textContent = clientQuotes[randomIndex];
+            });
+        }
+        
+        setInterval(rotateClientTestimonials, 8000);
+    </script>
+
+</body></html>
